@@ -1,7 +1,8 @@
-# Frontend starter kit
+# [Webpack]Frontend starter kit
 
-> With webpack + sass, pug and es6
-> Also eslint, sass lint
+> Webpack + SASS, Pug and ES6
+
+> Also eslint, sass lint and svg sprites
 
 # Requirements
 
