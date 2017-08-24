@@ -1,0 +1,30 @@
+mixin icon(name, custom_class)
+  if custom_class == undefined
+    - var className = 'icon icon-' + name
+  else
+    - var className = 'icon icon-' + name + ' ' + custom_class
+  
+  svg(class=className)
+    use(xlink:href="assets/images/sprites.svg#" + name)
+
+mixin btn(type, text, custom_class)
+  if custom_class == undefined
+    - var className = 'button'
+  else
+    - var className = 'button' + ' ' + custom_class
+
+  button(class=className, type=type) #{text}
+
+mixin link(type, href, text, custom_class, target)
+  if type == 0
+    if custom_class == undefined
+      - var className = 'link'
+    else
+      - var className = 'link' + ' ' + custom_class
+  else if type == 1
+    if custom_class == undefined
+      - var className = 'button'
+    else
+      - var className = 'button' + ' ' + custom_class
+
+  a(class=className, href=href, target=target) #{text}
