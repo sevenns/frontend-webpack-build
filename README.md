@@ -31,11 +31,29 @@ All svg icons need to move in ./src/assets/icons
 
 How to add icon in pug file
 ```pug
-+icon('filename-in-iconsdir', 'custom-style')
++icon([filled], [stroked], 'filename-in-iconsdir', 'custom-style')
 ```
 or without custom style
 ```pug
-+icon('filename-in-iconsdir')
++icon([filled], [stroked], 'filename-in-iconsdir')
+
+//- Filled example
++icon(true, false, 'icon-name')
+
+//- Stroked example
++icon(false, true, 'icon-name')
+
+//- Both example
++icon(true, true, 'icon-name')
+```
+
+Custom styles for icons:
+```pug
+//- Flip X
++icon(true, false, 'icon-name', 'icon__flip-x')
+
+//- Flip Y
++icon(true, false, 'icon-name', 'icon__flip-y')
 ```
 
 For customization icon you can use
