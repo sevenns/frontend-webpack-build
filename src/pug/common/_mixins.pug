@@ -1,8 +1,18 @@
-mixin icon(name, custom_class)
+mixin icon(fill, stroke, name, custom_class)
   if custom_class == undefined
-    - var className = 'icon icon-' + name
+    if fill == true && stroke != true
+      - var className = 'icon icon-' + name
+    else if fill == true && stroke == true
+      - var className = 'icon icon-' + name + ' icon__with-stroke'
+    else
+      - var className = 'icon icon-' + name + ' icon__only-stroke'
   else
-    - var className = 'icon icon-' + name + ' ' + custom_class
+    if fill == true && stroke != true
+      - var className = 'icon icon-' + name + ' ' + custom_class
+    else if fill == true && stroke == true
+      - var className = 'icon icon-' + name + ' ' + custom_class + ' icon__with-stroke'
+    else
+      - var className = 'icon icon-' + name + ' ' + custom_class + ' icon__only-stroke'
   
   svg(class=className)
     use(xlink:href="assets/images/sprites.svg#" + name)
@@ -14,6 +24,15 @@ mixin btn(type, text, custom_class)
     - var className = 'button' + ' ' + custom_class
 
   button(class=className, type=type) #{text}
+
+mixin icon-btn(type, icon, custom_class, icon_custom_class)
+  if custom_class == undefined
+    - var className = 'button'
+  else
+    - var className = 'button' + ' ' + custom_class
+
+  button(class=className, type=type)
+    +icon(icon, icon_custom_class)
 
 mixin link(type, href, text, custom_class, target)
   if type == 0

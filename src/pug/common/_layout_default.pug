@@ -1,12 +1,13 @@
 include ./_mixins.pug
+include ./_variables.pug
 
 doctype html
-html(lang='ru')
+html(lang=base.lang)
   head
     block title
 
-    meta(charset='utf-8')
-    meta(name='description', content='')
+    meta(charset=base.charset)
+    meta(name='description', content=base.description)
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
 

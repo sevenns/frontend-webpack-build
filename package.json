@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run icons && node build/dev-server.js",
     "build": "npm run icons && node build/build.js",
-    "icons": "svgo -f src/assets/icons && svg-sprite-generate -d src/assets/icons -o src/assets/images/sprites.svg",
+    "icons": "node .svgclear.js && svgo -f src/assets/icons && svg-sprite-generate -d src/assets/icons -o src/assets/images/sprites.svg",
     "clean": "rimraf dist"
   },
   "author": "alexander sevenns",
@@ -38,6 +38,7 @@
     "http-proxy-middleware": "^0.17.4",
     "imagemin-webpack-plugin": "^1.5.0-beta.0",
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
@@ -45,6 +46,7 @@
     "postcss-loader": "^2.0.6",
     "pug": "^2.0.0-rc.3",
     "pug-html-loader": "^1.1.5",
+    "remove-svg-properties": "^0.3.3",
     "rimraf": "^2.6.1",
     "sanitize.css": "^5.0.0",
     "sass-loader": "^6.0.6",

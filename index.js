@@ -6,19 +6,36 @@ requireAll(require.context('./src/pug/', false, /\w\.pug$/))
 
 $(document).ready(function () {
   svg4everybody()
-  new Main().pageLoaded()
+
+  return new Main().pageLoaded(
+    $(window).outerWidth(true),
+    $(window).outerHeight(true),
+    $(window).scrollTop()
+  )
 })
 
 $(window).scroll(function () {
-  new Main().pageScrolled()
+  return new Main().pageScrolling(
+    $(window).outerWidth(true),
+    $(window).outerHeight(true),
+    $(window).scrollTop()
+  )
 })
 
 $(window).resize(function () {
-  new Main().pageResized()
+  return new Main().pageResized(
+    $(window).outerWidth(true),
+    $(window).outerHeight(true),
+    $(window).scrollTop()
+  )
 })
 
 $(window).on('load', function () {
-  new Main().pageLoading()
+  return new Main().pageLoading(
+    $(window).outerWidth(true),
+    $(window).outerHeight(true),
+    $(window).scrollTop()
+  )
 })
 
 function requireAll (r) {

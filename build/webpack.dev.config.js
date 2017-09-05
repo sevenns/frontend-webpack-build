@@ -18,7 +18,10 @@ module.exports = merge(baseWebpackConfig, {
       },
       {
         test: /\.pug$/,
-        use: ['file-loader?name=[name].html', 'pug-html-loader?pretty&exports=false']
+        use: [
+          'file-loader?name=[name].html',
+          'pug-html-loader?pretty&exports=false'
+        ]
       }
     ]
   },
