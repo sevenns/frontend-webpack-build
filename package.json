@@ -1,0 +1,10 @@
+{
+  "name": "webpack-build",
+  "version": "2.0.0",
+  "description": "Frontend build with webpack and koa.js",
+  "author": "alexander sevenns",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.8.3"
+  }
+}
