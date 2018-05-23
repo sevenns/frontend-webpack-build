@@ -2,15 +2,16 @@ const paths = require('../config/paths');
 const rmrf = require('rimraf');
 const webpack = require('webpack');
 const webpackConfig = require('../config/webpack/build');
+
 const compiler = webpack(webpackConfig);
 
-rmrf(paths.build, error => {
-  if (error) {
+rmrf(paths.app, (rmrfError) => {
+  if (rmrfError) {
     process.exitCode = 1;
   }
 
-  compiler.run((error, stats) => {
-    if (error || stats.hasErrors()) {
+  compiler.run((compilerError, stats) => {
+    if (compilerError || stats.hasErrors()) {
       process.exitCode = 1;
     }
   });

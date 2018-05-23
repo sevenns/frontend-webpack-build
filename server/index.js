@@ -2,7 +2,6 @@
 
 const Koa = require('koa');
 const middlewares = require('./middlewares');
-const paths = require('../config/paths');
 
 const app = new Koa();
 const host = process.env.HOST || 'localhost';

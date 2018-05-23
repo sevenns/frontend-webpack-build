@@ -1,9 +1,9 @@
-const resolve = require('path').resolve;
+const { resolve } = require('path');
 
 module.exports = {
   root: resolve(__dirname, '..'),
-  app: resolve(__dirname, '../app'),
+  client: resolve(__dirname, '../client'),
   server: resolve(__dirname, '../server'),
-  build: resolve(__dirname, '../build'),
+  app: resolve(__dirname, '../app'),
   static: resolve(__dirname, '../static')
 };

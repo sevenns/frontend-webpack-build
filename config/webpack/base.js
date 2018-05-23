@@ -1,13 +1,13 @@
 const paths = require('../paths');
 
 module.exports = {
-  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
       '~': paths.root,
-      '~app': paths.app,
-      '~server': paths.server
+      '~client': paths.client,
+      '~server': paths.server,
+      '~app': paths.app
     }
   },
   node: {
@@ -15,27 +15,25 @@ module.exports = {
     __dirname: true
   },
   entry: {
-    app: [`${paths.app}/index.js`]
+    app: [`${paths.root}/index.js`]
   },
   output: {
-    path: `${paths.build}/scripts`,
+    path: `${paths.app}/scripts`,
     filename: '[name].js',
-    sourceMapFilename: '[name].map',
     publicPath: paths.static
   },
   module: {
     rules: [
       {
         test: /\.(js)$/,
-        loader: 'babel-loader',
-        exclude: [
-          /node_modules/,
-          paths.build
-        ],
-        options: {
-          babelrc: true,
-          cacheDirectory: true
-        }
+        exclude: [/node_modules/, paths.app],
+        use: ['babel-loader']
+      },
+
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/, paths.app, paths.static],
+        use: ['babel-loader', 'eslint-loader']
       }
     ]
   }

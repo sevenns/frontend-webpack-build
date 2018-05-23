@@ -8,12 +8,7 @@ module.exports = merge(base, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': 'production',
-      '__DEV__': 'production'
-    }),
-    new webpack.BannerPlugin({
-      raw: true,
-      entryOnly: false,
-      banner: `require('source-map-support/register')`
+      __DEV__: 'production'
     }),
     new FriendlyErrors({
       clearConsole: false,

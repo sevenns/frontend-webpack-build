@@ -5,15 +5,16 @@ const FriendlyErrors = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(base, {
   mode: 'development',
+  devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': 'development',
-      '__DEV__': 'development'
+      __DEV__: 'development'
     }),
     new webpack.BannerPlugin({
       raw: true,
       entryOnly: false,
-      banner: `require('source-map-support/register')`
+      banner: 'require("source-map-support/register")'
     }),
     new FriendlyErrors({
       clearConsole: true,

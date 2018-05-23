@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "max-len": [1, 80, 2, {
+      "ignoreComments": true
+    }],
+    "linebreak-style": 0,
+    "space-before-function-paren": 0,
+    "no-console": 0,
+    "no-param-reassign": 0,
+    "comma-dangle": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "class-methods-use-this": 0
+  }
+}

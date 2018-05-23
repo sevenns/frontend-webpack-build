@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const webpackMiddlewares = require('koa-webpack');
 const webpackConfig = require('../config/webpack/dev');
@@ -29,12 +27,12 @@ module.exports = (app) => {
 
   app.use(webpackMiddlewares({
     compiler,
-  
+
     dev: {
       publicPath: webpackConfig.output.publicPath,
       logLevel: 'silent'
     },
-  
+
     hot: {
       logLevel: 'silent'
     }
@@ -42,4 +40,4 @@ module.exports = (app) => {
 
   app.use(bodyParser());
   app.use(serve(paths.static));
-}
+};
