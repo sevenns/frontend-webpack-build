@@ -1,10 +1,29 @@
 {
   "name": "webpack-build",
-  "version": "2.0.0",
+  "version": "2.2.3",
   "description": "Frontend build with webpack and koa.js",
   "author": "alexander sevenns",
-  "license": "ISC",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wb dev",
+    "build": "wb build"
+  },
+  "bin": {
+    "wb": "./bin/wb.js"
+  },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-backpack": "^0.7.0",
+    "cross-spawn": "^6.0.5",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-static": "^4.0.3",
+    "koa-webpack": "^4.0.0",
+    "nodemon": "^1.17.4",
+    "rimraf": "^2.6.2",
+    "source-map-support": "^0.5.6",
     "webpack": "^4.8.3"
   }
 }
