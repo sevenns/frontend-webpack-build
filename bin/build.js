@@ -2,12 +2,11 @@
 const paths = require('../config/paths');
 const rmrf = require('rimraf');
 const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
-const options = { env: 'production' }
+const webpackConfig = require('../config/webpack/build');
 
 process.on('SIGINT', process.exit);
 
-const compiler = webpack(webpackConfig(options));
+const compiler = webpack(webpackConfig);
 
 rmrf(paths.build, error => {
   if (error) {

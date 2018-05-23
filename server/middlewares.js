@@ -1,9 +1,8 @@
 'use strict';
 
-const options = { env: process.env.NODE_ENV };
 const webpack = require('webpack');
 const webpackMiddlewares = require('koa-webpack');
-const webpackConfig = require('../webpack.config')(options);
+const webpackConfig = require('../config/webpack/dev');
 const serve = require('koa-static');
 const bodyParser = require('koa-bodyparser');
 const paths = require('../config/paths');
