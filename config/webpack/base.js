@@ -7,7 +7,8 @@ module.exports = {
       '~': paths.root,
       '~client': paths.client,
       '~server': paths.server,
-      '~app': paths.app
+      '~app': paths.app,
+      '~views': paths.views
     }
   },
   node: {

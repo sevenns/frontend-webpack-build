@@ -5,7 +5,7 @@
   "author": "alexander sevenns",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon ./bin/dev.js",
+    "dev": "node ./bin/dev.js",
     "build": "node ./bin/build.js"
   },
   "devDependencies": {
@@ -13,6 +13,7 @@
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-preset-backpack": "^0.7.0",
+    "chalk": "^2.4.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-loader": "^2.0.0",
@@ -20,11 +21,14 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
     "koa-static": "^4.0.3",
+    "koa-views": "^6.1.4",
     "koa-webpack": "^4.0.0",
     "nodemon": "^1.17.4",
+    "ora": "^2.1.0",
+    "pug": "^2.0.3",
     "rimraf": "^2.6.2",
-    "source-map-support": "^0.5.6",
     "webpack": "^4.8.3",
     "webpack-merge": "^4.1.2"
   },

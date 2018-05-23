@@ -5,5 +5,6 @@ module.exports = {
   client: resolve(__dirname, '../client'),
   server: resolve(__dirname, '../server'),
   app: resolve(__dirname, '../app'),
-  static: resolve(__dirname, '../static')
+  static: resolve(__dirname, '../static'),
+  views: resolve(__dirname, '../client/views')
 };

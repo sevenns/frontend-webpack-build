@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const webpackMiddlewares = require('koa-webpack');
 const webpackConfig = require('../config/webpack/dev');
 const serve = require('koa-static');
+const views = require('koa-views');
+const router = require('./router');
 const bodyParser = require('koa-bodyparser');
 const paths = require('../config/paths');
 
@@ -39,5 +41,13 @@ module.exports = (app) => {
   }));
 
   app.use(bodyParser());
+  app.use(views(paths.views, {
+    extension: 'pug',
+    options: {
+      basedir: paths.client
+    }
+  }));
+  app.use(router());
   app.use(serve(paths.static));
+  app.use(serve(paths.app));
 };
