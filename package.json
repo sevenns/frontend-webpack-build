@@ -1,6 +1,6 @@
 {
   "name": "webpack-build",
-  "version": "2.2.7",
+  "version": "2.3.0",
   "description": "Frontend build with webpack and koa.js",
   "author": "alexander sevenns",
   "license": "MIT",
