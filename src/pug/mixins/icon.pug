@@ -1,0 +1,20 @@
+mixin icon(fill, stroke, name, custom_class)
+  if custom_class == undefined
+    if fill == true && stroke != true
+      - var className = 'icon icon-' + name
+    else if fill == true && stroke == true
+      - var className = 'icon icon-' + name + ' icon__with-stroke'
+    else
+      - var className = 'icon icon-' + name + ' icon__only-stroke'
+  else
+    if fill == true && stroke != true
+      - var className = 'icon icon-' + name + ' ' + custom_class
+    else if fill == true && stroke == true
+      - var className = 'icon icon-' + name + ' ' + custom_class + ' icon__with-stroke'
+    else
+      - var className = 'icon icon-' + name + ' ' + custom_class + ' icon__only-stroke'
+  
+  - var href = 'assets/images/sprites.svg#' + name
+  
+  svg(class=className)
+    use(xlink:href=href)

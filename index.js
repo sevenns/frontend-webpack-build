@@ -1,41 +1,52 @@
 import $ from 'jquery'
 import svg4everybody from 'svg4everybody'
-import Main from './src/scripts/Main'
-import './src/sass/styles.sass'
+import Main from './src/classes/Main'
+import './src/styles/index.sass'
+
+const main = new Main()
+
 requireAll(require.context('./src/pug/', false, /\w\.pug$/))
 
-$(document).ready(function () {
+$(document).ready(() => {
+  const data = {
+    w: $(window).outerWidth(true),
+    h: $(window).outerHeight(true),
+    scroll: $(window).scrollTop()
+  }
+
   svg4everybody()
 
-  return new Main().pageLoaded(
-    $(window).outerWidth(true),
-    $(window).outerHeight(true),
-    $(window).scrollTop()
-  )
+  return main.loaded ? main.loaded(data) : null
 })
 
-$(window).scroll(function () {
-  return new Main().pageScrolling(
-    $(window).outerWidth(true),
-    $(window).outerHeight(true),
-    $(window).scrollTop()
-  )
+$(window).scroll(() => {
+  const data = {
+    w: $(window).outerWidth(true),
+    h: $(window).outerHeight(true),
+    scroll: $(window).scrollTop()
+  }
+
+  return main.scrolled ? main.scrolled(data) : null
 })
 
-$(window).resize(function () {
-  return new Main().pageResized(
-    $(window).outerWidth(true),
-    $(window).outerHeight(true),
-    $(window).scrollTop()
-  )
+$(window).resize(() => {
+  const data = {
+    w: $(window).outerWidth(true),
+    h: $(window).outerHeight(true),
+    scroll: $(window).scrollTop()
+  }
+
+  return main.resized ? main.resized(data) : null
 })
 
-$(window).on('load', function () {
-  return new Main().pageLoading(
-    $(window).outerWidth(true),
-    $(window).outerHeight(true),
-    $(window).scrollTop()
-  )
+$(window).on('load', () => {
+  const data = {
+    w: $(window).outerWidth(true),
+    h: $(window).outerHeight(true),
+    scroll: $(window).scrollTop()
+  }
+
+  return main.beforeLoaded ? main.beforeLoaded(data) : null
 })
 
 function requireAll (r) {

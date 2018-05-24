@@ -1,4 +1,3 @@
-require('./check-versions')()
 const ora = require('ora')
 const chalk = require('chalk')
 
@@ -7,7 +6,6 @@ if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
-const opn = require('opn')
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
@@ -16,8 +14,6 @@ const webpackConfig = require('./webpack.dev.config')
 
 // default port where dev server listens for incoming traffic
 const port = process.env.PORT || config.dev.port
-// automatically open browser, if not set will be false
-var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
 var proxyTable = config.dev.proxyTable
@@ -68,10 +64,6 @@ devMiddleware.waitUntilValid(() => {
   spinner.stop()
 
   console.log(chalk.yellow('> Listening at ' + uri + '\n'))
-  // when env is testing, don't need open it
-  if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-    opn(uri)
-  }
   _resolve()
 })
 

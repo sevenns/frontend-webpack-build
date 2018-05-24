@@ -1,15 +1,15 @@
+const path = require('path')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-// add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
-
 module.exports = merge(baseWebpackConfig, {
+  entry: {
+    app: ['./index.js', './build/dev-client'],
+
+  },
   module: {
     rules: [
       {
@@ -20,7 +20,12 @@ module.exports = merge(baseWebpackConfig, {
         test: /\.pug$/,
         use: [
           'file-loader?name=[name].html',
-          'pug-html-loader?pretty&exports=false'
+          {
+            loader: 'pug-html-loader?pretty&exports=false',
+            options: {
+              basedir: path.resolve(__dirname, '../src/pug')
+            }
+          }
         ]
       }
     ]

@@ -11,6 +11,9 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
+  entry: {
+    app: './index.js'
+  },
   module: {
     rules: [
       {
@@ -19,14 +22,22 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       {
         test: /\.pug$/,
-        loaders: ['file-loader?name=[name].html', 'pug-html-loader?pretty&exports=false']
+        loaders: [
+          'file-loader?name=[name].html',
+          {
+            loader: 'pug-html-loader?pretty&exports=false',
+            options: {
+              basedir: path.resolve(__dirname, '../src/pug')
+            }
+          }
+        ]
       }
     ]
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: 'scripts/bundle.js'
+    filename: 'scripts/app.js'
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -40,7 +51,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: 'css/styles.css'
+      filename: 'css/app.css'
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

@@ -13,12 +13,9 @@ function assetsPath (_path) {
 }
 
 module.exports = {
-  entry: {
-    app: './index.js'
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'scripts/bundle.js',
+    filename: 'scripts/app.js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsRoot
       : config.dev.assetsRoot
@@ -38,7 +35,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: resolve('src')
+        exclude: [/node_modules/]
       },
       {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
