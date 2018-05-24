@@ -53,4 +53,4 @@ npm run build
 - sass *variables* files must have the same name as the beginning of each variable
 
 ### - Limitation (mb temporary)
-After saving pug files hmr not injecting changes, need reload page
+After saving pug files hmr injecting changes but doesn't reload the page. Need manually reloading.
