@@ -1,0 +1,28 @@
+@import 'variables/index'
+@import 'mixins/index'
+@import 'components/index'
+@import 'pages/index'
+
+
+*, *::after, *::before
+  box-sizing: border-box
+
+html
+  @include font(default)
+  font-size: $font-size
+
+body
+  @include font(default)
+  position: relative
+  min-width: 320px
+  overflow-x: hidden
+  font-size: 1rem
+  color: $color-pickled-bluewood
+  line-height: 1.6
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0
+
+textarea, input, select
+  -webkit-appearance: none !important
+  border-radius: 0 !important

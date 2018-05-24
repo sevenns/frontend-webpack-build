@@ -15,14 +15,6 @@ module.exports = {
     __filename: true,
     __dirname: true
   },
-  entry: {
-    app: [`${paths.root}/index.js`]
-  },
-  output: {
-    path: `${paths.app}/scripts`,
-    filename: '[name].js',
-    publicPath: paths.static
-  },
   module: {
     rules: [
       {

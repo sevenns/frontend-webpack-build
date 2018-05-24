@@ -1,4 +1,10 @@
+import Preloader from './Preloader';
+
 export default class Main {
+  constructor () {
+    this._preloader = new Preloader({ el: '.preloader' });
+  }
+
   loaded ({ w, h, scroll }) {
     console.log(`
       ~LOADED~
@@ -33,5 +39,7 @@ export default class Main {
       Height: ${h}
       Scroll: ${scroll}
     `);
+
+    this._preloader.init();
   }
 }

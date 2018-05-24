@@ -21,6 +21,20 @@ rmrf(paths.app, (rmrfError) => {
     }
 
     spinner.stop();
-    console.log(chalk.green.bold('Builded successfully.\n'));
+
+    console.log(stats.toString({ // eslint-disable-line
+      builtAt: false,
+      entrypoints: false,
+      colors: true,
+      modules: false,
+      children: false,
+      chunks: false,
+      chunkModules: false,
+      hash: false,
+      version: false,
+      timings: false
+    }) + '\n\n');
+
+    spinner.succeed(chalk.green.bold('Builded successfully.\n'));
   });
 });

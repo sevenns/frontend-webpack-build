@@ -1,18 +1,28 @@
+const paths = require('../paths');
 const base = require('./base');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(base, {
   mode: 'development',
   devtool: 'cheap-eval-source-map',
+  entry: {
+    app: [
+      'webpack-hot-middleware/client?noInfo=true&reload=true',
+      `${paths.root}/index.js`
+    ]
+  },
+  output: {
+    path: paths.static,
+    filename: 'scripts/[name].js'
+  },
   module: {
     rules: [
       {
         test: /\.sass$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -20,11 +30,8 @@ module.exports = merge(base, {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../styles/app.css'
-    }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': 'development',
+      NODE_ENV: 'development',
       __DEV__: 'development'
     }),
     new FriendlyErrors({

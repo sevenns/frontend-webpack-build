@@ -1,41 +1,39 @@
-const Router = require('koa-router');
+const express = require('express');
 const paths = require('../config/paths');
 const { resolve } = require('path');
 const fs = require('fs');
 
-const router = new Router();
+const router = express.Router();
 
-module.exports = () => {
-  router.get('/*', async (context, next) => {
-    let { url } = context;
-    let view = 'index';
-    let isPath = true;
-    let absolute = {
-      path: '/',
-      file: 'index.pug'
+router.use('/*', async (req, res, next) => {
+  let url = req.originalUrl;
+  let view = 'index';
+  let isPath = true;
+  let absolute = {
+    path: '/',
+    file: 'index.pug'
+  };
+
+  if (url !== '/') {
+    url = url.slice(1, req.originalUrl.length);
+    isPath = url.search(/./i) <= 0;
+    view = url;
+    absolute = {
+      path: resolve(paths.views, view),
+      file: resolve(paths.views, `${view}.pug`)
     };
+  }
 
-    if (url !== '/') {
-      url = url.slice(1, context.url.length);
-      isPath = url.search(/./i) <= 0;
-      view = url;
-      absolute = {
-        path: resolve(paths.views, view),
-        file: resolve(paths.views, `${view}.pug`)
-      };
-    }
+  if (isPath &&
+    (
+      fs.existsSync(absolute.path) ||
+      fs.existsSync(absolute.file)
+    )
+  ) {
+    await res.render(view);
+  } else {
+    await next();
+  }
+});
 
-    if (isPath &&
-      (
-        fs.existsSync(absolute.path) ||
-        fs.existsSync(absolute.file)
-      )
-    ) {
-      await context.render(view);
-    } else {
-      await next();
-    }
-  });
-
-  return router.middleware();
-};
+module.exports = router;
