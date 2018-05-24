@@ -15,7 +15,7 @@ router.use('/*', async (req, res, next) => {
   };
 
   if (url !== '/') {
-    url = url.slice(1, req.originalUrl.length);
+    url = url.slice(1, url.length);
     isPath = url.search(/./i) <= 0;
     view = url;
     absolute = {

@@ -1,10 +1,11 @@
 const express = require('express');
 const middlewares = require('./middlewares');
 const paths = require('../config/paths');
+const config = require('../config/server');
 
 const app = express();
-const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || '8080';
+const host = process.env.HOST || config.host;
+const port = process.env.PORT || config.port;
 
 middlewares(app);
 
