@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const paths = require('../config/paths');
 const rmrf = require('rimraf');
 const webpack = require('webpack');
@@ -18,5 +19,9 @@ rmrf(paths.app, (rmrfError) => {
     }
   });
 
-  nodemon(nodemonConfig).on('quit', process.exit);
+  nodemon(nodemonConfig)
+    .on('quit', process.exit)
+    .on('restart', () => {
+      console.log(chalk.cyan.bold('Compiling...'));
+    });
 });

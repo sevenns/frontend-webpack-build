@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Main from '~client/classes/Main';
+import '~client/styles/app.sass';
 
 const main = new Main();
 
