@@ -28,6 +28,25 @@ module.exports = merge(base, {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].html',
+              context: paths.views,
+              // outputPath: paths.app,
+              publicPath: './'
+            }
+          },
+          {
+            loader: 'pug-html-loader',
+            options: { basedir: paths.client }
+          }
+        ],
       }
     ]
   },

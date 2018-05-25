@@ -1,6 +1,11 @@
 import $ from 'jquery';
 import Main from '~client/classes/Main';
 import '~client/styles/index.sass';
+// import '~views/index.pug';
+
+// if (process.env.NODE_ENV === 'production') {
+//   requireAll(require.context('~client/views', false, /\w\.pug$/));
+// }
 
 const main = new Main();
 
@@ -43,3 +48,7 @@ $(window).on('load', () => {
 
   return main.beforeLoaded ? main.beforeLoaded(data) : null;
 });
+
+// function requireAll (r) {
+//   r.keys().forEach(r);
+// }
