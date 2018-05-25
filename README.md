@@ -5,7 +5,7 @@ You need [nodejs](https://nodejs.org/en/) with npm (LTS recommended)
 ### - Build Setup
 
 ``` bash
-# install dependencies and link bin scripts
+# install dependencies
 npm install
 
 # serve with hot reload at localhost:8080
