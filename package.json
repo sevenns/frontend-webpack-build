@@ -1,12 +1,14 @@
 {
   "name": "webpack-build",
-  "version": "2.5.2",
+  "version": "2.5.5",
   "description": "Frontend build with webpack and express",
   "author": "alexander sevenns",
   "license": "MIT",
   "scripts": {
     "dev": "node ./bin/dev.js",
-    "build": "node ./bin/build.js"
+    "build": "node ./bin/build.js",
+    "start": "node ./bin/start.js",
+    "clean": "node ./bin/clean.js"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",

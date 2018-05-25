@@ -36,15 +36,16 @@ module.exports = merge(base, {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].html',
-              context: paths.views,
-              // outputPath: paths.app,
-              publicPath: './'
+              name: 'html/[path][name].html',
+              context: paths.views
             }
           },
           {
             loader: 'pug-html-loader',
-            options: { basedir: paths.client }
+            options: {
+              basedir: paths.client,
+              pretty: true
+            }
           }
         ],
       }
