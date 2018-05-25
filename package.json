@@ -1,6 +1,6 @@
 {
   "name": "webpack-build",
-  "version": "2.5.0",
+  "version": "2.5.2",
   "description": "Frontend build with webpack and express",
   "author": "alexander sevenns",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-backpack": "^0.7.0",
     "chalk": "^2.4.1",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -39,7 +40,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "sanitize.css": "^5.0.0"
   },
   "postcss": {
     "plugins": {

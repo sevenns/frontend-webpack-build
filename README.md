@@ -31,6 +31,7 @@ npm run build
 		- functions (sass functions)
 		- mixins (sass mixins)
 		- pages (style of pug views)
+		- plugins (external plugins)
 		- variables (sass variables)
 	- **variables** (pug variables)
 	- **views** (pug pages)
