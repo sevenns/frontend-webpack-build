@@ -24,13 +24,16 @@ router.use('/*', async (req, res, next) => {
     };
   }
 
-  if (isPath &&
-    (
+  if (isPath) {
+    if (
       fs.existsSync(absolute.path) ||
       fs.existsSync(absolute.file)
-    )
-  ) {
-    await res.render(view);
+    ) {
+      await res.render(view);
+    } else {
+      res.status(404);
+      await res.render('error/404');
+    }
   } else {
     await next();
   }
