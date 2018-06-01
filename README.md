@@ -26,6 +26,7 @@ npm run clean
 		- *Main.js* entry point of js
 		- Preloader.js
 		- ...
+	- **icons** (svg src icons)
 	- **components** (pug components)
 	- **layouts** (pug layouts)
 	- **styles** (sass styles)
