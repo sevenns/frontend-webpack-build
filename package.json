@@ -1,6 +1,6 @@
 {
   "name": "webpack-build",
-  "version": "2.5.5",
+  "version": "2.5.8",
   "description": "Frontend build with webpack and express",
   "author": "alexander sevenns",
   "license": "MIT",
@@ -8,6 +8,7 @@
     "dev": "node ./bin/dev.js",
     "build": "node ./bin/build.js",
     "start": "node ./bin/start.js",
+    "icons": "node ./bin/icons.js",
     "clean": "node ./bin/clean.js"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.12.0",
+    "executive": "^1.5.13",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -35,8 +37,11 @@
     "pug": "^2.0.3",
     "pug-html-loader": "^1.1.5",
     "rimraf": "^2.6.2",
+    "sass-lint": "^1.12.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^1.0.5",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.8.3",
     "webpack-dev-middleware": "^3.1.3",

@@ -6,7 +6,9 @@
 @import 'pages/index'
 
 
-*, *::after, *::before
+*,
+*::after,
+*::before
   box-sizing: border-box
 
 html
@@ -15,16 +17,24 @@ html
 
 body
   @include font(default)
-  position: relative
+  color: $color-pickled-bluewood
+  font-size: 1rem
+  line-height: 1.6
   min-width: 320px
   overflow-x: hidden
-  font-size: 1rem
-  color: $color-pickled-bluewood
-  line-height: 1.6
+  position: relative
 
-h1, h2, h3, h4, h5, h6, p
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
   margin: 0
 
-textarea, input, select
-  -webkit-appearance: none !important
+textarea,
+input,
+select
+  appearance: none !important
   border-radius: 0 !important

@@ -1,4 +1,8 @@
 extends /layouts/default.pug
 
-block body
+include /components/Icon.pug
+
+block app
   span Index page
+
+  +Icon({ name: 'clock' })

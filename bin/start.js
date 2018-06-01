@@ -22,6 +22,12 @@ app.get('/', (req, res) => {
   res.redirect('/html');
 });
 
+app.get('/:name', (req, res) => {
+  if (req.params.name !== 'html') {
+    res.redirect(`/html/${req.params.name}`);
+  }
+});
+
 app.listen(port, host, () => {
   console.log(chalk.green.bold(`${message} ${info}`));
 });

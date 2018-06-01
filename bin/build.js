@@ -32,7 +32,8 @@ rmrf(paths.app, (rmrfError) => {
       chunkModules: false,
       hash: false,
       version: false,
-      timings: false
+      timings: false,
+      warnings: false
     }) + '\n\n');
 
     spinner.succeed(chalk.green.bold('Builded successfully.\n'));

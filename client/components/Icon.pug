@@ -1,0 +1,36 @@
+mixin Icon (args)
+  if args.name != undefined
+
+    - var className = 'icon icon-' + args.name
+
+    if args.fill == undefined
+      - args.fill = true
+    
+    if args.stroke == undefined
+      - args.stroke = false
+    
+    if args.fill == true && args.stroke != true
+      
+      if args.class == undefined
+        - className = className + ' icon-filled'
+      else
+        - className = className + ' icon-filled ' + args.class
+
+    else if args.fill == true && args.stroke == true
+
+      if args.class == undefined
+        - className = className + ' icon-filled icon-stroked'
+      else
+        - className = className + ' icon-filled icon-stroked ' + args.class
+
+    else
+
+      if args.class == undefined
+        - className = className + ' icon-stroked'
+      else
+        - className = className + ' icon-stroked ' + args.class
+    
+    - var href = '/images/sprites.svg#' + args.name
+    
+    svg(class=className)
+      use(xlink:href=href)

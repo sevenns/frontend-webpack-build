@@ -1,3 +1,7 @@
+include /components/Header.pug
+include /components/Footer.pug
+include /components/Preloader.pug
+
 include /variables/index.pug
 
 doctype html
@@ -41,11 +45,11 @@ html(lang=defaults.lang)
     style .preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;z-index:9999}
 
   body
-    include /components/Preloader.pug
-    include /components/Header.pug
+    +Preloader()
+    +Header()
 
-    block body
+    block app
 
-    include /components/Footer.pug
+    +Footer()
 
     script(src='/scripts/app.js')
