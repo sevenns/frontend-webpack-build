@@ -1,12 +1,12 @@
-const paths = require('../paths');
-const base = require('./base');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const FriendlyErrors = require('friendly-errors-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const paths = require('../paths')
+const base = require('./base')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const FriendlyErrors = require('friendly-errors-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = merge(base, {
   mode: 'production',
@@ -80,4 +80,4 @@ module.exports = merge(base, {
       }
     ])
   ]
-});
+})

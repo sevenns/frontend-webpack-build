@@ -1,8 +1,8 @@
-import Preloader from './Preloader';
+import Preloader from './Preloader'
 
 export default class Main {
   constructor () {
-    this._preloader = new Preloader({ el: '.preloader' });
+    this._preloader = new Preloader({ el: '.preloader' })
   }
 
   loaded ({ w, h, scroll }) {
@@ -11,7 +11,7 @@ export default class Main {
       Width: ${w}
       Height: ${h}
       Scroll: ${scroll}
-    `);
+    `)
   }
 
   scrolled ({ w, h, scroll }) {
@@ -20,7 +20,7 @@ export default class Main {
       Width: ${w}
       Height: ${h}
       Scroll: ${scroll}
-    `);
+    `)
   }
 
   resized ({ w, h, scroll }) {
@@ -29,7 +29,7 @@ export default class Main {
       Width: ${w}
       Height: ${h}
       Scroll: ${scroll}
-    `);
+    `)
   }
 
   beforeLoaded ({ w, h, scroll }) {
@@ -38,8 +38,8 @@ export default class Main {
       Width: ${w}
       Height: ${h}
       Scroll: ${scroll}
-    `);
+    `)
 
-    this._preloader.init();
+    this._preloader.init()
   }
 }

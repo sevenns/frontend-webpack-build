@@ -1,7 +1,7 @@
 {
-  "name": "webpack-build",
+  "name": "frontend-webpack-build",
   "version": "2.5.8",
-  "description": "Frontend build with webpack and express",
+  "description": "Webpack build for frontend development only",
   "author": "alexander sevenns",
   "license": "MIT",
   "scripts": {
@@ -18,6 +18,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-backpack": "^0.7.0",
     "chalk": "^2.4.1",
+    "clear": "^0.1.0",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",

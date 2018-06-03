@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { resolve } = require('path')
 
 module.exports = {
   root: resolve(__dirname, '..'),
@@ -8,4 +8,4 @@ module.exports = {
   static: resolve(__dirname, '../static'),
   images: resolve(__dirname, '../static/images'),
   views: resolve(__dirname, '../client/views')
-};
+}

@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery'
 
 export default class Preloader {
   constructor ({
@@ -7,24 +7,24 @@ export default class Preloader {
     animDuration = 500,
     delay = 500
   } = {}) {
-    this._el = $(el);
-    this._animDuration = animDuration;
-    this._delay = delay;
+    this._el = $(el)
+    this._animDuration = animDuration
+    this._delay = delay
 
     if (init) {
-      this.init();
+      this.init()
     }
   }
 
   init () {
-    this._el.delay(this._delay).fadeOut(this._animDuration);
+    this._el.delay(this._delay).fadeOut(this._animDuration)
 
     setTimeout(() => {
-      this._el.remove();
-    }, this._delay + this._animDuration);
+      this._el.remove()
+    }, this._delay + this._animDuration)
   }
 
   remove () {
-    this._el.remove();
+    this._el.remove()
   }
 }

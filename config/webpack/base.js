@@ -1,4 +1,4 @@
-const paths = require('../paths');
+const paths = require('../paths')
 
 module.exports = {
   resolve: {
@@ -30,4 +30,4 @@ module.exports = {
       }
     ]
   }
-};
+}

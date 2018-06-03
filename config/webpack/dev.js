@@ -1,8 +1,8 @@
-const paths = require('../paths');
-const base = require('./base');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const FriendlyErrors = require('friendly-errors-webpack-plugin');
+const paths = require('../paths')
+const base = require('./base')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const FriendlyErrors = require('friendly-errors-webpack-plugin')
 
 module.exports = merge(base, {
   mode: 'development',
@@ -41,4 +41,4 @@ module.exports = merge(base, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ]
-});
+})
