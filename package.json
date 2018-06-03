@@ -1,5 +1,5 @@
 {
-  "name": "frontend-starter-kit",
+  "name": "frontend-webpack-build",
   "version": "1.1.0",
   "description": "Frontend starter kit with WebPack 3 (pug, sass, es6)",
   "scripts": {
@@ -63,5 +63,10 @@
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
-  }
+  },
+  "browserslist": [
+    "> 10%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
 }

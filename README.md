@@ -1,14 +1,8 @@
-# [Webpack]Frontend starter kit
-
-> Webpack + SASS, Pug and ES6
-
-> Also eslint, sass lint and svg sprites
-
-# Requirements
+### Requirements
 
 You need [nodejs](https://nodejs.org/en/) with npm
 
-## Build Setup
+### Build Setup
 
 ``` bash
 # install dependencies
@@ -25,7 +19,7 @@ npm run build
 
 ```
 
-# SVG Sprites
+### SVG Sprites
 
 All svg icons need to move in ./src/assets/icons
 
