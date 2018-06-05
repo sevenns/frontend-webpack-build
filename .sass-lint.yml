@@ -2,7 +2,7 @@ options:
   formatter: stylish
 files:
   include:
-    - './client/styles/**/*.sass'
+    - 'client/styles/**/*.sass'
 rules:
   # Extends
   extends-before-mixins: 1

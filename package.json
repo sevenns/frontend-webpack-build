@@ -1,6 +1,6 @@
 {
   "name": "frontend-webpack-build",
-  "version": "2.5.9",
+  "version": "2.6.0",
   "description": "Webpack build for frontend development only",
   "author": "alexander sevenns",
   "license": "MIT",
