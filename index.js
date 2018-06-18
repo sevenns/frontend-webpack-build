@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from 'weery'
 import Main from '~client/classes/Main'
 import '~client/styles/index.sass'
 

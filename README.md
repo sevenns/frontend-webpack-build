@@ -30,6 +30,7 @@ npm run clean
 	- **components** (pug components)
 	- **layouts** (pug layouts)
 	- **styles** (sass styles)
+		- animations
 		- components (styles of pug components)
 		- functions (sass functions)
 		- mixins (sass mixins)

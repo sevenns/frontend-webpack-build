@@ -7,7 +7,7 @@ export default class Main {
 
   loaded ({ w, h, scroll }) {
     console.log(`
-      ~LOADED~
+      ~SCROLLED~
       Width: ${w}
       Height: ${h}
       Scroll: ${scroll}
